@@ -1,0 +1,37 @@
+$main-color: white;
+$font-main: arial, sans-serif;
+$main-padding: 1em 0;
+$no-pad: 0;
+$main-align: center;
+
+body {
+    font-family: $font-main;
+    margin: 0;
+    padding: $no-pad;
+    header{
+        background-color: #4CAF50;
+        color: $main-color;
+        padding: $main-padding;
+        text-align: center;
+        nav{
+            ul{
+                list-style-type: none;
+                padding: $no-pad;
+                li{
+                    display: inline;
+                    margin-right: 10px;
+                    a{
+                        color: $main-color;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background-color: #333;
+        color: $main-color;
+        text-align: $main-align;
+        padding: $main-padding;
+    }
+}
