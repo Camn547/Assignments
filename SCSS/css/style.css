@@ -1,0 +1,29 @@
+body {
+  font-family: arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1em 0;
+  text-align: center;
+}
+body header nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+body header nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+body header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+body footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}/*# sourceMappingURL=style.css.map */

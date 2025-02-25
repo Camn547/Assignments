@@ -1,0 +1,13 @@
+body {
+  background-color: rgb(110, 110, 110);
+}
+
+.buttons {
+  position: absolute;
+  left: 40%;
+  bottom: 20%;
+}
+
+button {
+  margin-right: 100px;
+}/*# sourceMappingURL=stopwatch.css.map */
