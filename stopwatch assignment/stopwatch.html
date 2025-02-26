@@ -3,14 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../SCSS/css/stopwatch.css">
     <title>Stopwatch Website</title>
 </head>
 <body>
-    <hr>
-    <div class="buttons">
-        <button>Start / Stop</button>
-        <button>Lap / Clear</button>
+    <h1>Stopwatch</h1>
+        
+    <div class="timer">
+        <h2></h2>
     </div>
+
+    <br>
+
+    <div class="buttons">
+        <button class="start">Start / Stop</button>
+        <button class="lap">Lap / Clear</button>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            let interval;
+            let running = false;
+            let milisecond = 0;
+            let second = 0;
+            let twodigitsecond = 0;
+            let minute = 0;
+            let twodigitminute = 0;
+            let hour = 0;
+
+            function startLoop(){
+                interval = setInterval(function(){
+                    milisecond += 1
+                    console.log(milisecond);
+                    return milisecond
+                }, 1000);
+            }
+            function stopLoop(){
+                clearInterval(interval);
+            }  
+
+            // starts the timer when it is not running, stops when it is running
+            $(".start").on("click", function(){
+                if(milisecond == 0){
+                    startLoop();
+                    running = true
+                }else if(milisecond != 0){
+                    stopLoop();
+                    running = false
+                }
+            })
+
+            // will display the most recent lap while running and set timer to zero when not running
+            $(".lap").on("click", function(){
+                if(running == true){
+                    doLap();
+                }else if(running == false){
+                    milisecond = 0
+                    console.log(milisecond)
+                }
+            })
+        });
+    </script>
 </body>
 </html>

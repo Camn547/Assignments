@@ -1,14 +1,25 @@
 body{
     background-color: rgb(110, 110, 110);
 }
-.buttons{
-    position: absolute;
-    left: 40%;
-    bottom: 20%;
+.timer{
+    background-color: white;
+    width: 400px;
+    height: 100px;
+    justify-items: center;
+    align-content: center;
 }
 button{
-    margin-right: 100px;
+    width: 140px;
+    height: 30px;
+}
+.buttons{
+    width: 400px;
+}
+h2{
+    font-weight: 100;
+    font-size: 60px;
+    margin: 0;
 }
 hr{
-    
+    width: 10px;
 }

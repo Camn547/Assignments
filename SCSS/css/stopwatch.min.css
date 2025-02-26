@@ -1,1 +1,1 @@
-body{background-color:#6e6e6e}.buttons{position:absolute;left:40%;bottom:20%}button{margin-right:100px}/*# sourceMappingURL=stopwatch.min.css.map */
+body{background-color:#6e6e6e}.timer{background-color:#fff;width:400px;height:100px;justify-items:center;align-content:center}button{width:140px;height:30px}.buttons{width:400px}h2{font-weight:100;font-size:60px;margin:0}hr{width:10px}/*# sourceMappingURL=stopwatch.min.css.map */
