@@ -38,7 +38,7 @@
                     milisecond += 1
                     console.log(milisecond);
                     return milisecond
-                }, 1000);
+                }, 10);
             }
             function stopLoop(){
                 clearInterval(interval);
@@ -64,6 +64,7 @@
                     console.log(milisecond)
                 }
             })
+            $("h2").html(`${hour}:${twodigitminute}${minute}:${twodigitsecond}${second}:${milisecond}`)
         });
     </script>
 </body>
