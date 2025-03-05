@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../SCSS/css/stopwatch.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="./stopwatch.css">
     <title>Stopwatch Website</title>
 </head>
 <body>
     <h1>Stopwatch</h1>
         
     <div class="timer">
-        <h2></h2>
+        <h2>00:00:00:00</h2>
     </div>
 
     <br>
@@ -21,50 +21,82 @@
         <button class="lap">Lap / Clear</button>
     </div>
 
+    <br>
+
+    <div class="laps">
+        <h3></h3>
+    </div>
+
     <script>
         $(document).ready(function(){
-
             let interval;
-            let running = false;
-            let milisecond = 0;
-            let second = 0;
-            let twodigitsecond = 0;
-            let minute = 0;
-            let twodigitminute = 0;
-            let hour = 0;
+            let on = false;
+            let milliseconds = 0;
+            let seconds = 0;
+            let minutes = 0;
+            let hours = 0;
+            let count = 1;
 
-            function startLoop(){
-                interval = setInterval(function(){
-                    milisecond += 1
-                    console.log(milisecond);
-                    return milisecond
+            //as the name says, this updates the display
+            // i had difficulty finding out how to get placeholder zeros, but i found this on W3 schools
+            function updateDisplay() {
+                let ms = milliseconds.toString().padStart(2, "0");
+                let sec = seconds.toString().padStart(2, "0");
+                let min = minutes.toString().padStart(2, "0");
+                let hr = hours.toString().padStart(2, "0");
+
+                $("h2").html(`${hr}:${min}:${sec}:${ms}`);
+            }
+
+            function startLoop() {
+                interval = setInterval(function() {
+                    milliseconds += 1;
+                    if (milliseconds >= 100) {
+                        milliseconds = 0;
+                        seconds += 1;
+                    }
+                    if (seconds >= 60) {
+                        seconds = 0;
+                        minutes += 1;
+                    }
+                    if (minutes >= 60) {
+                        minutes = 0;
+                        hours += 1;
+                    }
+                    updateDisplay();
                 }, 10);
             }
-            function stopLoop(){
+
+            function stopLoop() {
                 clearInterval(interval);
             }  
 
-            // starts the timer when it is not running, stops when it is running
             $(".start").on("click", function(){
-                if(milisecond == 0){
+                if (!on) {
                     startLoop();
-                    running = true
-                }else if(milisecond != 0){
+                } else {
                     stopLoop();
-                    running = false
                 }
-            })
-
-            // will display the most recent lap while running and set timer to zero when not running
+                on = !on;
+            });
+            
+            //this checks to see if the timer is on when you click the lap/clear button, if on it will update the
             $(".lap").on("click", function(){
-                if(running == true){
-                    doLap();
-                }else if(running == false){
-                    milisecond = 0
-                    console.log(milisecond)
+                if (on) {
+                    $(".laps").prepend(`<h3>#${count} Lap: ${hours}:${minutes}:${seconds}:${milliseconds}</h3>`);
+                    count++;
+                } else {
+                    milliseconds = 0;
+                    seconds = 0;
+                    minutes = 0;
+                    hours = 0;
+                    count = 1;
+                    updateDisplay();
+                    $(".laps").empty();
                 }
-            })
-            $("h2").html(`${hour}:${twodigitminute}${minute}:${twodigitsecond}${second}:${milisecond}`)
+            });
+
+            updateDisplay();
         });
     </script>
 </body>
