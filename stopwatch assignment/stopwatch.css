@@ -1,5 +1,8 @@
 body {
-  background-color: rgb(110, 110, 110);
+  background-color: #097B35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 1200'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(13,939,486)' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2308a02e'/%3E%3Cstop offset='0.02' stop-color='%23097B35'/%3E%3Cstop offset='0.02' stop-color='%23097d35'/%3E%3Cstop offset='0.032' stop-color='%23097B35'/%3E%3Cstop offset='0.032' stop-color='%23077d2a'/%3E%3Cstop offset='0.056' stop-color='%23097B35'/%3E%3Cstop offset='0.056' stop-color='%2304b018'/%3E%3Cstop offset='0.07' stop-color='%23097B35'/%3E%3Cstop offset='0.07' stop-color='%23087c31'/%3E%3Cstop offset='0.1' stop-color='%23097B35'/%3E%3Cstop offset='0.1' stop-color='%23066f25'/%3E%3Cstop offset='0.126' stop-color='%23097B35'/%3E%3Cstop offset='0.126' stop-color='%2308932f'/%3E%3Cstop offset='0.142' stop-color='%23097B35'/%3E%3Cstop offset='0.142' stop-color='%2306bf26'/%3E%3Cstop offset='0.159' stop-color='%23097B35'/%3E%3Cstop offset='0.159' stop-color='%23097f33'/%3E%3Cstop offset='0.17' stop-color='%23097B35'/%3E%3Cstop offset='0.17' stop-color='%2306b122'/%3E%3Cstop offset='0.197' stop-color='%23097B35'/%3E%3Cstop offset='0.197' stop-color='%23077f29'/%3E%3Cstop offset='0.218' stop-color='%23097B35'/%3E%3Cstop offset='0.218' stop-color='%23047018'/%3E%3Cstop offset='0.239' stop-color='%23097B35'/%3E%3Cstop offset='0.239' stop-color='%23069925'/%3E%3Cstop offset='0.254' stop-color='%23097B35'/%3E%3Cstop offset='0.254' stop-color='%23097f32'/%3E%3Cstop offset='0.283' stop-color='%23097B35'/%3E%3Cstop offset='0.283' stop-color='%23077f28'/%3E%3Cstop offset='0.294' stop-color='%23097B35'/%3E%3Cstop offset='0.294' stop-color='%2306cd23'/%3E%3Cstop offset='0.305' stop-color='%23097B35'/%3E%3Cstop offset='0.305' stop-color='%23059a1c'/%3E%3Cstop offset='0.332' stop-color='%23097B35'/%3E%3Cstop offset='0.332' stop-color='%23048c1a'/%3E%3Cstop offset='0.346' stop-color='%23097B35'/%3E%3Cstop offset='0.346' stop-color='%2308762f'/%3E%3Cstop offset='0.362' stop-color='%23097B35'/%3E%3Cstop offset='0.362' stop-color='%2307be28'/%3E%3Cstop offset='0.381' stop-color='%23097B35'/%3E%3Cstop offset='0.381' stop-color='%2308742e'/%3E%3Cstop offset='0.415' stop-color='%23097B35'/%3E%3Cstop offset='0.415' stop-color='%23097e33'/%3E%3Cstop offset='0.428' stop-color='%23097B35'/%3E%3Cstop offset='0.428' stop-color='%23097d35'/%3E%3Cstop offset='0.442' stop-color='%23097B35'/%3E%3Cstop offset='0.442' stop-color='%2304bc18'/%3E%3Cstop offset='0.456' stop-color='%23097B35'/%3E%3Cstop offset='0.456' stop-color='%2304cb18'/%3E%3Cstop offset='0.498' stop-color='%23097B35'/%3E%3Cstop offset='0.498' stop-color='%2305ab1f'/%3E%3Cstop offset='0.511' stop-color='%23097B35'/%3E%3Cstop offset='0.511' stop-color='%23089131'/%3E%3Cstop offset='0.532' stop-color='%23097B35'/%3E%3Cstop offset='0.532' stop-color='%23088e31'/%3E%3Cstop offset='0.541' stop-color='%23097B35'/%3E%3Cstop offset='0.541' stop-color='%23088d30'/%3E%3Cstop offset='0.56' stop-color='%23097B35'/%3E%3Cstop offset='0.56' stop-color='%23097b33'/%3E%3Cstop offset='0.581' stop-color='%23097B35'/%3E%3Cstop offset='0.581' stop-color='%23078a2c'/%3E%3Cstop offset='0.6' stop-color='%23097B35'/%3E%3Cstop offset='0.6' stop-color='%2307ae2c'/%3E%3Cstop offset='0.618' stop-color='%23097B35'/%3E%3Cstop offset='0.618' stop-color='%2307b22b'/%3E%3Cstop offset='0.656' stop-color='%23097B35'/%3E%3Cstop offset='0.656' stop-color='%23077d29'/%3E%3Cstop offset='0.679' stop-color='%23097B35'/%3E%3Cstop offset='0.679' stop-color='%23097d33'/%3E%3Cstop offset='0.689' stop-color='%23097B35'/%3E%3Cstop offset='0.689' stop-color='%2305dd1c'/%3E%3Cstop offset='0.720' stop-color='%23097B35'/%3E%3Cstop offset='0.720' stop-color='%2305751e'/%3E%3Cstop offset='0.734' stop-color='%23097B35'/%3E%3Cstop offset='0.734' stop-color='%23098633'/%3E%3Cstop offset='0.748' stop-color='%23097B35'/%3E%3Cstop offset='0.748' stop-color='%23068923'/%3E%3Cstop offset='0.764' stop-color='%23097B35'/%3E%3Cstop offset='0.764' stop-color='%23098034'/%3E%3Cstop offset='0.788' stop-color='%23097B35'/%3E%3Cstop offset='0.788' stop-color='%2308782c'/%3E%3Cstop offset='0.808' stop-color='%23097B35'/%3E%3Cstop offset='0.808' stop-color='%2305e21c'/%3E%3Cstop offset='0.831' stop-color='%23097B35'/%3E%3Cstop offset='0.831' stop-color='%2307b22a'/%3E%3Cstop offset='0.856' stop-color='%23097B35'/%3E%3Cstop offset='0.856' stop-color='%2304ba1a'/%3E%3Cstop offset='0.872' stop-color='%23097B35'/%3E%3Cstop offset='0.872' stop-color='%23048617'/%3E%3Cstop offset='0.894' stop-color='%23097B35'/%3E%3Cstop offset='0.894' stop-color='%23087c2f'/%3E%3Cstop offset='0.914' stop-color='%23097B35'/%3E%3Cstop offset='0.914' stop-color='%2305c51e'/%3E%3Cstop offset='0.942' stop-color='%23097B35'/%3E%3Cstop offset='0.942' stop-color='%23087a30'/%3E%3Cstop offset='0.957' stop-color='%23097B35'/%3E%3Cstop offset='0.957' stop-color='%23068d24'/%3E%3Cstop offset='0.973' stop-color='%23097B35'/%3E%3Cstop offset='0.973' stop-color='%2305ab1f'/%3E%3Cstop offset='1' stop-color='%23097B35'/%3E%3Cstop offset='1' stop-color='%2306a226'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' x='0' y='0' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .timer {
@@ -8,6 +11,46 @@ body {
   height: 100px;
   justify-items: center;
   align-content: center;
+  position: absolute;
+  left: 39.2%;
+  top: 50%;
+  border: 3px black solid;
+}
+
+.lightningbolt {
+  position: absolute;
+  right: 10%;
+  top: 30%;
+}
+
+.laps {
+  position: absolute;
+  left: 20%;
+  top: 30%;
+  width: 200px;
+  height: 500px;
+  background-color: white;
+  overflow-x: hidden;
+  border: 3px black solid;
+  justify-items: center;
+}
+
+.stopwatch {
+  position: absolute;
+  top: 20px;
+  left: 18rem;
+  z-index: -1;
+}
+
+.stopwatch img {
+  width: 1300px;
+}
+
+.runningman img {
+  width: 130px;
+  position: absolute;
+  right: 47%;
+  top: 35%;
 }
 
 button {
@@ -17,6 +60,9 @@ button {
 
 .buttons {
   width: 400px;
+  position: absolute;
+  top: 62%;
+  left: 42.5%;
 }
 
 h2 {
@@ -26,5 +72,5 @@ h2 {
 }
 
 hr {
-  width: 10px;
+  width: 90%;
 }/*# sourceMappingURL=stopwatch.css.map */

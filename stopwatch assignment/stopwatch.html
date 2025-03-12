@@ -8,7 +8,6 @@
     <title>Stopwatch Website</title>
 </head>
 <body>
-    <h1>Stopwatch</h1>
         
     <div class="timer">
         <h2>00:00:00:00</h2>
@@ -21,9 +20,21 @@
         <button class="lap">Lap / Clear</button>
     </div>
 
+    <div class="stopwatch"><img src="./stopwatch png-Photoroom.png" alt=""></div>
+
+    <div class="runningman">
+        <img src="./running man svg.png" alt="">
+    </div>
+
+    <div class="lightningbolt">
+        <img src="./pngtree-lightning-bolt-icon-thunder-and-flash-png-image_6384267.png" alt="">
+    </div>
+
     <br>
 
     <div class="laps">
+        <h1>Laps</h1>
+        <hr>
         <h3></h3>
     </div>
 
@@ -83,7 +94,7 @@
             //this checks to see if the timer is on when you click the lap/clear button, if on it will update the
             $(".lap").on("click", function(){
                 if (on) {
-                    $(".laps").prepend(`<h3>#${count} Lap: ${hours}:${minutes}:${seconds}:${milliseconds}</h3>`);
+                    $(".laps").append(`<h3>#${count} Lap: ${hours}:${minutes}:${seconds}:${milliseconds}</h3>`);
                     count++;
                 } else {
                     milliseconds = 0;
