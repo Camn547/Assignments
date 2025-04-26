@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./HC.css">
+    <title>Holiday Event Countdown</title>
+</head>
+<body>
+
+    <h1>Holiday Event Countdown</h1>
+    <p>Enter name and date of the event to start the countdown!</p>
+
+    <input type="text" id="eventName" placeholder="Event Name" required>
+    <input type="datetime-local" id="eventDate" required>
+    <button onclick="addEvent()">Add Event</button>
+
+    <div id="eventList"></div>
+
+    <script>
+        // array for multiple evenst
+        let events = [];
+
+        function addEvent() {
+            let eventName =document.getElementById("eventName").value;
+            let eventDate = document.getElementById("eventDate").value;
+
+            let targetDate =new Date(eventDate);
+
+            let event ={
+                name:eventName,
+                date: targetDate
+            };
+
+            events.push(event);
+
+            displayEvents();
+        }
+
+        function displayEvents(){
+            let eventList = document.getElementById('eventList');
+            eventList.innerHTML = "";
+
+            events.forEach((event, index) =>{
+                let eventItem = document.createElement("div");
+                eventItem.classList.add("item");
+
+                let eventName = document.createElement("p");
+                eventName.innerText = `Event: ${event.name}`;
+                eventItem.appendChild(eventName);
+
+                let CountDown = document.createElement("p");
+                CountDown.classList.add("countdown");
+                eventItem.appendChild(CountDown);
+
+                let DButton = document.createElement("button");
+                DButton.classList.add("delete");
+                DButton.innerText = 'Delete';
+                DButton.onclick = () => deleteEvent(index);
+                eventItem.appendChild(DButton);
+
+                eventList.appendChild(eventItem);
+
+                setInterval(function() {
+                    let now = new Date();
+                    let then = event.date - now;
+
+                    if (then <= 0) {
+                        CountDown.innerText =`${event.name} has arrived`;
+                    }else{
+                        let days =Math.floor(then /(1000 *60 *60 *24));
+                        let hours = Math.floor((then%(1000 *60 *60* 24))/(1000 *60*60));
+                        let minutes =  Math.floor((then %(1000 *60*60))/( 1000*60));
+                        let seconds = Math.floor( (then%(1000*60) )/ 1000);
+
+                        CountDown.innerText =`${days} days, ${hours}hours, ${minutes} minutes, ${seconds} seconds`;
+                    }
+                }, 1000);
+            });
+        }
+
+        function deleteEvent(index) {
+            events.splice(index, 1);
+            displayEvents();
+        }
+    </script>
+</body>
+</html>
