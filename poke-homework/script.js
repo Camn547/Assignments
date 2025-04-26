@@ -1,44 +1,43 @@
-// my top 10 pokemon (non-specific order except first 3)
-let mudkip = fetch('https://pokeapi.co/api/v2/pokemon/mudkip')
-let braixen = fetch('https://pokeapi.co/api/v2/pokemon/braixen')
-let absol = fetch('https://pokeapi.co/api/v2/pokemon/absol')
-let flareon = fetch('https://pokeapi.co/api/v2/pokemon/flareon')
-let zoroark = fetch('https://pokeapi.co/api/v2/pokemon/zoroark')
-let cinderace = fetch('https://pokeapi.co/api/v2/pokemon/cinderace')
-let meowscarada = fetch('https://pokeapi.co/api/v2/pokemon/meowscarada')
-let mewtwo = fetch('https://pokeapi.co/api/v2/pokemon/mewtwo')
-let typhlosion = fetch('https://pokeapi.co/api/v2/pokemon/typhlosion')
-let groudon = fetch('https://pokeapi.co/api/v2/pokemon/groudon')
+const listElement = document.getElementById('pokemon-list');
 
-let myfavpoke = [mudkip, braixen, absol, flareon, zoroark, cinderace, meowscarada, mewtwo, typhlosion, groudon]
+fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+  .then(response => response.json())
+  .then(data => {
+    let pokeResults = data.results;
 
-for(i in myfavpoke){
-    myfavpoke[i]
-   .then(response =>{
-        if(!response.ok){throw new error('network response was bad: '+response.statusText)}
-        return response.json()
-    }).then(data =>{
-        let name = data.name
-        console.log(name)
-        
-        let BEXP = data.base_experience
-        console.log(BEXP)
-        
-        let weight = data.weight
-        console.log(weight)
-        
-        let abilities = data.abilities[0].ability.name
-        console.log(abilities)
-        
-        let sprite = data.sprites.front_default
-        console.log(sprite)
-        
-        let type = data.types[0].type.name
-        console.log(type)
-        
-        return data
-    })
-    .catch(error=>{
-        console.error("there's a problem: ", error)
-    }) 
-}
+    //gets the freaking details
+    const detailPromises = pokeResults.map(poke =>
+      fetch(poke.url).then(response => response.json())
+    );
+
+    //promises used as requested
+    Promise.all(detailPromises)
+      .then(pokeDetails => {
+        // this FINASLLY sorts the pokemon by their pokedexorder, sucked
+        pokeDetails.sort((a, b) => a.id - b.id);
+
+        pokeDetails.forEach(pokeData => {
+          let name = pokeData.name;
+          let baseExp = pokeData.base_experience;
+          let sprite = pokeData.sprites.front_default;
+          let Type = pokeData.types[0]?.type.name;
+          let Ability = pokeData.abilities[0]?.ability.name;
+
+          //adds all the poke-info to the list
+          let listItem = document.createElement('li');
+          listItem.id= (`${Type}`)
+          listItem.innerHTML = `
+            <h2>#${pokeData.id} ${name}</h2>
+            <p>Base Experience: ${baseExp}</p>
+            <img src="${sprite}" alt="${name}" />
+            ${Type ? `<p>Type: ${Type}</p>` : ''}
+            ${Ability ? `<p>Ability: ${Ability}</p>` : ''}
+          `;
+          listElement.appendChild(listItem);
+        });
+      });
+  })
+  //au cas où il y aurait des erreurs (in case of errors)
+  .catch(error => {
+    console.error('Error fetching info:', error);
+  });
